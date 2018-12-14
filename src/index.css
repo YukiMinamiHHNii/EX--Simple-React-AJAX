@@ -6,7 +6,7 @@
 	--color-secondary: #404040;
 	--pad-btn: #c4c5c9;
 	--pad-btn-active: #f98d11;
-	--general-spacing: 0.5rem;
+	--general-spacing: 1rem;
 }
 
 html {
@@ -31,10 +31,12 @@ body {
 
 a {
 	color: var(--pad-btn);
+	text-decoration: none;
 }
 
 a:hover {
 	color: var(--pad-btn-active);
+	text-decoration: none;
 }
 
 .container-main {
@@ -48,6 +50,21 @@ a:hover {
 
 .spacing {
 	margin: var(--general-spacing);
+}
+
+.card {
+	background-color: var(--color-secondary);
+	border-radius: 0.50rem;
+	padding: var(--general-spacing);
+}
+
+.card-image{
+	max-width: 100%;
+	height: auto;
+}
+
+.card-name{
+	padding-top: var(--general-spacing);
 }
 
 .form-submit,
@@ -65,7 +82,7 @@ textarea,
 button {
 	margin: var(--general-spacing) 0;
 	padding: var(--general-spacing);
-	border-radius: .25rem;
+	border-radius: 0.25rem;
 }
 
 textarea {
@@ -76,11 +93,11 @@ textarea {
 	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
-input[type="submit"].form-control{
+input[type="submit"].form-control {
 	width: auto;
 }
 
-input[type="submit"]{
+input[type="submit"] {
 	border: none;
 	background-color: var(--pad-btn);
 	margin: var(--general-spacing) 0;

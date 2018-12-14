@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, FormGroup, Label, Input, Col } from "reactstrap";
+import { Row, Form, FormGroup, Label, Input, Col } from "reactstrap";
 import axios from "axios";
 
 class CardSearch extends React.Component {
@@ -25,7 +25,7 @@ class CardSearch extends React.Component {
 				params: this.state
 			})
 			.then(response => {
-				console.log(response.data);
+				return this.props.search(response.data);
 			})
 			.catch(err => {
 				console.log(err);
@@ -33,7 +33,8 @@ class CardSearch extends React.Component {
 	}
 	render() {
 		return (
-			<Form inline className="col-sm-12" onSubmit={this.onSubmit}>
+			<Row>
+				<Form inline className="col-sm-12" onSubmit={this.onSubmit}>
 				<FormGroup className="col-sm-12">
 					<Label for="name" className="col-sm-12 col-md-3">
 						Search card:
@@ -54,6 +55,7 @@ class CardSearch extends React.Component {
 					</Col>
 				</FormGroup>
 			</Form>
+			</Row>
 		);
 	}
 }
