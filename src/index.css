@@ -80,7 +80,6 @@ label {
 input,
 textarea,
 button {
-	margin: var(--general-spacing) 0;
 	padding: var(--general-spacing);
 	border-radius: 0.25rem;
 }

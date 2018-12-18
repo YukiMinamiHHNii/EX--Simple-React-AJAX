@@ -1,6 +1,7 @@
 import React from "react";
 import { Row, Form, FormGroup, Label, Input, Col } from "reactstrap";
 import axios from "axios";
+import { Redirect, Link } from "react-router-dom";
 
 class CardSearch extends React.Component {
 	constructor(props) {
@@ -19,6 +20,7 @@ class CardSearch extends React.Component {
 		});
 	}
 	onSubmit(e) {
+		console.log("this");
 		e.preventDefault();
 		axios
 			.get(process.env.REACT_APP_API_ENDPOINT, {
@@ -35,26 +37,28 @@ class CardSearch extends React.Component {
 		return (
 			<Row>
 				<Form inline className="col-sm-12" onSubmit={this.onSubmit}>
-				<FormGroup className="col-sm-12">
-					<Label for="name" className="col-sm-12 col-md-3">
-						Search card:
-					</Label>
-					<Input
-						type="text"
-						name="name"
-						placeholder="Card name"
-						className="col-sm-12 col-md-7"
-						onChange={this.onChange}
-					/>
-					<Col
-						sm="12"
-						md="2"
-						className="d-flex flex-row justify-content-end justify-content-md-center"
-					>
-						<Input type="submit" value="Submit" />
-					</Col>
-				</FormGroup>
-			</Form>
+					<FormGroup className="col-sm-12">
+						<Label for="name" className="col-sm-12 col-md-3">
+							Search card:
+						</Label>
+						<Input
+							type="text"
+							name="name"
+							placeholder="Card name"
+							className="col-sm-12 col-md-7"
+							onChange={this.onChange}
+						/>
+						<Col
+							sm="12"
+							md="2"
+							className="d-flex flex-row justify-content-end justify-content-md-center"
+						>
+							<Link to="/" onClick={this.onSubmit}>
+								<Input type="submit" value="Submit" />
+							</Link>
+						</Col>
+					</FormGroup>
+				</Form>
 			</Row>
 		);
 	}
