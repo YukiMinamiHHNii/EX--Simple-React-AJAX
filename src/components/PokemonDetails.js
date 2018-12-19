@@ -44,7 +44,6 @@ class PokemonDetails extends React.Component {
 							)}
 							<Row className="mb-3">
 								<h3 className="col-md-12 text-center">Attacks:</h3>
-
 								{this.props.cardData.hasOwnProperty("attacks")
 									? this.props.cardData.attacks.map(item => {
 											return (

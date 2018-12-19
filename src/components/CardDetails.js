@@ -3,6 +3,7 @@ import axios from "axios";
 import { Row } from "reactstrap";
 import ErrorDetails from "./ErrorDetails";
 import PokemonDetails from "./PokemonDetails";
+import TrainerDetails from "./TrainerDetails";
 
 let details;
 
@@ -49,7 +50,12 @@ class CardDetails extends React.Component {
 			if (this.state.error) {
 				details = <ErrorDetails error={this.state.error} />;
 			} else {
-				details = <PokemonDetails cardData={this.state.cardData}/>;
+				details =
+					this.state.cardData.supertype === "Pokémon" ? (
+						<PokemonDetails cardData={this.state.cardData} />
+					) : (
+						<TrainerDetails cardData={this.state.cardData} />
+					);
 			}
 		}
 		return <Row>{details}</Row>;
