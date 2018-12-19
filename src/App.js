@@ -45,6 +45,7 @@ class App extends React.Component {
 								}}
 							/>
 							<Route path="/:cardId" component={CardDetails} />
+							<CardDetails/>
 						</Switch>
 					</Container>
 				</Router>

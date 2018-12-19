@@ -67,6 +67,10 @@ a:hover {
 	padding-top: var(--general-spacing);
 }
 
+.card-details{
+	margin: var(--general-spacing) 0;
+}
+
 .form-submit,
 .header {
 	text-align: center;

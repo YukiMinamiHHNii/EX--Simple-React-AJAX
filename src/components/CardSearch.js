@@ -1,13 +1,13 @@
 import React from "react";
 import { Row, Form, FormGroup, Label, Input, Col } from "reactstrap";
 import axios from "axios";
-import { Redirect, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class CardSearch extends React.Component {
 	constructor(props) {
 		super(props);
 		this.onChange = this.onChange.bind(this);
-		this.onSubmit = this.onSubmit.bind(this);
+		this.onSearch = this.onSearch.bind(this);
 		this.state = {
 			name: ""
 		};
@@ -19,10 +19,8 @@ class CardSearch extends React.Component {
 			return { [target]: value };
 		});
 	}
-	onSubmit(e) {
-		console.log("this");
-		e.preventDefault();
-		axios
+	onSearch(e) {
+		return axios
 			.get(process.env.REACT_APP_API_ENDPOINT, {
 				params: this.state
 			})
@@ -36,7 +34,7 @@ class CardSearch extends React.Component {
 	render() {
 		return (
 			<Row>
-				<Form inline className="col-sm-12" onSubmit={this.onSubmit}>
+				<Form inline className="col-sm-12">
 					<FormGroup className="col-sm-12">
 						<Label for="name" className="col-sm-12 col-md-3">
 							Search card:
@@ -53,7 +51,7 @@ class CardSearch extends React.Component {
 							md="2"
 							className="d-flex flex-row justify-content-end justify-content-md-center"
 						>
-							<Link to="/" onClick={this.onSubmit}>
+							<Link to="/" onClick={this.onSearch}>
 								<Input type="submit" value="Submit" />
 							</Link>
 						</Col>
