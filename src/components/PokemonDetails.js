@@ -14,8 +14,9 @@ class PokemonDetails extends React.Component {
 								className="card-image"
 							/>
 						</section>
-						<section className="col-md-6 pl-md-0 card-details">
-							<h2 className="col-sm-12 text-center">
+						<section className="col-md-6 pl-md-0 card-details d-flex flex-column justify-content-center">
+							<div>
+								<h2 className="col-sm-12 text-center">
 								{this.props.cardData.name}
 							</h2>
 							<h3 className="col-sm-12 text-center">
@@ -96,6 +97,7 @@ class PokemonDetails extends React.Component {
 									<span className="text-center">{this.props.cardData.set}</span>
 								</section>
 							</Row>
+							</div>
 						</section>
 					</Row>
 				</article>
