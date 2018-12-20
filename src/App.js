@@ -7,6 +7,7 @@ import Navigation from "./components/Navigation";
 import CardSearch from "./components/CardSearch";
 import CardViewer from "./components/CardViewer";
 import CardDetails from "./components/CardDetails";
+import Credits from "./components/Credits";
 
 dotenv.load();
 
@@ -26,11 +27,11 @@ class App extends React.Component {
 	}
 	render() {
 		return (
-			<main>
-				<Navigation />
-				<Router>
+			<Router>
+				<main>
+					<Navigation />
 					<Container className="container-main">
-						<CardSearch search={this.foundCards}/>
+						<CardSearch search={this.foundCards} />
 						<Switch>
 							<Route
 								exact
@@ -44,12 +45,12 @@ class App extends React.Component {
 									);
 								}}
 							/>
+							<Route exact path="/credits" component={Credits} />
 							<Route path="/:cardId" component={CardDetails} />
-							<CardDetails/>
 						</Switch>
 					</Container>
-				</Router>
-			</main>
+				</main>
+			</Router>
 		);
 	}
 }

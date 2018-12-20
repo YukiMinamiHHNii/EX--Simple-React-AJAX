@@ -8,6 +8,7 @@ import {
 	NavItem,
 	NavLink
 } from "reactstrap";
+import {Link} from "react-router-dom";
 
 class Navigation extends React.Component {
 	constructor(props) {
@@ -31,10 +32,12 @@ class Navigation extends React.Component {
 					<Collapse isOpen={this.state.isOpen} navbar>
 						<Nav className="ml-auto" navbar>
 							<NavItem>
-								<NavLink href="/">Option 1</NavLink>
+								<NavLink href="https://github.com/YukiMinamiHHNii/EX--Simple-React-AJAX">Github</NavLink>
 							</NavItem>
 							<NavItem>
-								<NavLink href="/">Option 2</NavLink>
+								<NavLink>
+									<Link to="/credits">Credits</Link>
+								</NavLink>
 							</NavItem>
 						</Nav>
 					</Collapse>

@@ -1,2 +1,2 @@
 # EX--Simple-React-AJAX
-Very simple usage example of Axios on a React application
+(Not so) simple usage example of Axios on a React application (includes React Router and Reactstrap too!).
